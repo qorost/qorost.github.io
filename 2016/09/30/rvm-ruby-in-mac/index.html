@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ruby,rvm," />
 
 
 
@@ -84,12 +84,28 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Qoros's Coding Space">
-<meta property="og:url" content="http://qorost.github.io/categories/World-of-Rust/index.html">
+<meta name="description" content="AbstractThis blog talks about ruby configuration.
+Basics
+rvm, ruby version manager, is used to intall Ruby and manage your Rails versions.
+
+ruby, is the interpreter for the Ruby programming language.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RVM Ruby Configuration on Mac">
+<meta property="og:url" content="http://qorost.github.io/2016/09/30/rvm-ruby-in-mac/index.html">
 <meta property="og:site_name" content="Qoros's Coding Space">
+<meta property="og:description" content="AbstractThis blog talks about ruby configuration.
+Basics
+rvm, ruby version manager, is used to intall Ruby and manage your Rails versions.
+
+ruby, is the interpreter for the Ruby programming language.">
+<meta property="og:updated_time" content="2016-09-30T19:54:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Qoros's Coding Space">
+<meta name="twitter:title" content="RVM Ruby Configuration on Mac">
+<meta name="twitter:description" content="AbstractThis blog talks about ruby configuration.
+Basics
+rvm, ruby version manager, is used to intall Ruby and manage your Rails versions.
+
+ruby, is the interpreter for the Ruby programming language.">
 
 
 
@@ -110,9 +126,9 @@
 
 
 
-  <link rel="canonical" href="http://qorost.github.io/categories/World-of-Rust/"/>
+  <link rel="canonical" href="http://qorost.github.io/2016/09/30/rvm-ruby-in-mac/"/>
 
-  <title> 分类: World of Rust | Qoros's Coding Space </title>
+  <title> RVM Ruby Configuration on Mac | Qoros's Coding Space </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -143,7 +159,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -241,47 +257,173 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        World of Rust
-        <small>分类</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                RVM Ruby Configuration on Mac
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-30T10:26:14-07:00" content="2016-09-30">
+              2016-09-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/tools/" itemprop="url" rel="index">
+                    <span itemprop="name">tools</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/30/rvm-ruby-in-mac/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/rvm-ruby-in-mac/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>This blog talks about ruby configuration.</p>
+<h2 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h2><ol>
+<li><p><code>rvm</code>, ruby version manager, is used to intall Ruby and manage your Rails versions.</p>
+</li>
+<li><p><code>ruby</code>, is the interpreter for the Ruby programming language.</p>
+</li>
+<li><p><code>rails</code>, is a web application development framework.</p>
+</li>
+<li><p><code>gems</code>, is the soft libraries.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gem install **</div><div class="line">gem uninstall **</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>gemset</code> is to store different gems for different purposes. You can use <code>rvm gemset list</code> to show all the gemset. By default, there are two gemsets, one is <code>default</code>, one is <code>global</code>. You can use <code>rvm gemset use global</code> to swith to <code>global</code> gemset. When you install gem in <code>global</code> gemset, it will come use to all other gemset.</p>
+</li>
+</ol>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p>follow the guide in <a href="http://railsapps.github.io/installrubyonrails-mac.html" target="_blank" rel="external">InstallRubyonRailsmac</a></p>
+<h2 id="Usages"><a href="#Usages" class="headerlink" title="Usages"></a>Usages</h2><ul>
+<li>remove rvm<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rvm implode</div><div class="line">rm -rf ~/.rvm</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Errors"><a href="#Errors" class="headerlink" title="Errors"></a>Errors</h2><p>. <code>bundle install</code> returns <code>Could not locate Gemfile or .bundle/ directory</code><br>You just need to change directories to your app, THEN run bundle install :) <a href="http://stackoverflow.com/questions/10012181/bundle-install-returns-could-not-locate-gemfile" target="_blank" rel="external">Stackoverflow</a></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/09/12/configure-vim-for-rust/" itemprop="url">
-              
-                <span itemprop="name">A Vim IDE for RUST language</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-12T18:27:04-07:00"
-              content="2016-09-12" >
-          09-12
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ruby/" rel="tag">#ruby</a>
+          
+            <a href="/tags/rvm/" rel="tag">#rvm</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/12/configure-vim-for-rust/" rel="next" title="A Vim IDE for RUST language">
+                <i class="fa fa-chevron-left"></i> A Vim IDE for RUST language
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/30/hexo-configuration/" rel="prev" title="Configure Hexo to Support Asciidoctor">
+                Configure Hexo to Support Asciidoctor <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </section>
 
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -289,6 +431,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/30/rvm-ruby-in-mac/"
+           data-title="RVM Ruby Configuration on Mac" data-url="http://qorost.github.io/2016/09/30/rvm-ruby-in-mac/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -308,8 +458,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -370,6 +529,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basics"><span class="nav-number">2.</span> <span class="nav-text">Basics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install"><span class="nav-number">3.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usages"><span class="nav-number">4.</span> <span class="nav-text">Usages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Errors"><span class="nav-number">5.</span> <span class="nav-text">Errors</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -473,6 +643,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
