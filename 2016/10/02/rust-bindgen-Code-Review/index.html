@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="rust,binding," />
 
 
 
@@ -84,12 +84,25 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Qoros's Coding Space">
-<meta property="og:url" content="http://qorost.github.io/index.html">
+<meta name="description" content="Abstract
+
+
+In this blog, I will review the code of rust-bindgen, a binding tool for binding c library to rust. I&amp;#8217;ll start with the binding concepts, then I will explain you the idea behind the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rust-bindgen Code Review">
+<meta property="og:url" content="http://qorost.github.io/2016/10/02/rust-bindgen-Code-Review/index.html">
 <meta property="og:site_name" content="Qoros's Coding Space">
+<meta property="og:description" content="Abstract
+
+
+In this blog, I will review the code of rust-bindgen, a binding tool for binding c library to rust. I&amp;#8217;ll start with the binding concepts, then I will explain you the idea behind the">
+<meta property="og:updated_time" content="2016-10-03T05:55:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Qoros's Coding Space">
+<meta name="twitter:title" content="rust-bindgen Code Review">
+<meta name="twitter:description" content="Abstract
+
+
+In this blog, I will review the code of rust-bindgen, a binding tool for binding c library to rust. I&amp;#8217;ll start with the binding concepts, then I will explain you the idea behind the">
 
 
 
@@ -110,9 +123,9 @@
 
 
 
-  <link rel="canonical" href="http://qorost.github.io/"/>
+  <link rel="canonical" href="http://qorost.github.io/2016/10/02/rust-bindgen-Code-Review/"/>
 
-  <title> Qoros's Coding Space </title>
+  <title> rust-bindgen Code Review | Qoros's Coding Space </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -143,9 +156,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,9 +253,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -264,10 +275,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/10/02/rust-bindgen-Code-Review/" itemprop="url">
-                  rust-bindgen Code Review
-                </a>
+                rust-bindgen Code Review
               
             
           </h1>
@@ -333,9 +341,7 @@
       
 
       
-        
-          
-            <div class="sect1">
+        <div class="sect1">
 <h2 id="_abstract">Abstract</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -721,613 +727,61 @@
 </div>
 </div>
 </div>
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/30/brew-related-errors-and-solutions-md/" itemprop="url">
-                  Homebrew Related Errors and Solutions
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-30T10:38:39-07:00" content="2016-09-30">
-              2016-09-30
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/tools/" itemprop="url" rel="index">
-                    <span itemprop="name">tools</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/rust/" rel="tag">#rust</a>
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/30/brew-related-errors-and-solutions-md/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/brew-related-errors-and-solutions-md/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/binding/" rel="tag">#binding</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>This blog collects the errors and solutions I met with brew.</p>
-<p>. dyld: Library not loaded:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* dyld: Library not loaded: /usr/local/opt/readline/lib/libreadline.6.dylib</div><div class="line">  Referenced from: /usr/local/bin/bash</div><div class="line">    Reason: image not found</div></pre></td></tr></table></figure>
-<p>This occurs because of /usr/local/bin/bash requires libreadline.6, but there is not such a dylib in the directory. This happens may be because the dependency was installed after <code>bash</code>, but it doesn’t update the <code>bash</code> dependency, so a solution for this is :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew rm bash</div><div class="line">brew install bash</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/09/30/brew-related-errors-and-solutions-md/" rel="next" title="Homebrew Related Errors and Solutions">
+                <i class="fa fa-chevron-left"></i> Homebrew Related Errors and Solutions
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/09/30/hexo-configuration/" itemprop="url">
-                  Configure Hexo to Support Asciidoctor
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-30T10:38:39-07:00" content="2016-09-30">
-              2016-09-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/tools/" itemprop="url" rel="index">
-                    <span itemprop="name">tools</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/30/hexo-configuration/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/hexo-configuration/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <div class="sect1">
-<h2 id="_startup">Startup</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Please follow the guide on <a href="https://hexo.io/docs/" target="_blank" rel="external">hexo official documents</a></p>
-</div>
-<div class="paragraph">
-<p>Some good guides in Chinese are(很好的中文教程):</p>
-</div>
-<div class="paragraph">
-<p><a href="http://bbs.crossincode.com/forum.php?mod=viewthread&amp;tid=5650&amp;highlight=hexo" target="_blank" rel="external">Crossin&#8217;s GitHub+Hexo建立你的第一个博客</a></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>I use <a href="https://github.com/imakewebthings/deck.js" target="_blank" rel="external">deck.js</a> to render slides.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_supporting_asciidoctor">Supporting Asciidoctor</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>install <code>asciidoctor.js</code></p>
-<div class="listingblock">
-<div class="content">
-<pre>cd /path/to/hexo-site-dir/
-npm install asciidoctor.js --save</pre>
-</div>
-</div>
-</li>
-<li>
-<p>install <code>hexo-renderer-asciidoc</code></p>
-<div class="listingblock">
-<div class="content">
-<pre>cd /path/to/hexo-site-dir/
-npm install hexo-renderer-asciidoc --save</pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/30/rvm-ruby-in-mac/" itemprop="url">
-                  RVM Ruby Configuration on Mac
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-30T10:26:14-07:00" content="2016-09-30">
-              2016-09-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/tools/" itemprop="url" rel="index">
-                    <span itemprop="name">tools</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/30/rvm-ruby-in-mac/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/rvm-ruby-in-mac/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>This blog talks about ruby configuration.</p>
-<h2 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h2><ol>
-<li><p><code>rvm</code>, ruby version manager, is used to intall Ruby and manage your Rails versions.</p>
-</li>
-<li><p><code>ruby</code>, is the interpreter for the Ruby programming language.</p>
-</li>
-<li><p><code>rails</code>, is a web application development framework.</p>
-</li>
-<li><p><code>gems</code>, is the soft libraries.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gem install **</div><div class="line">gem uninstall **</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>gemset</code> is to store different gems for different purposes. You can use <code>rvm gemset list</code> to show all the gemset. By default, there are two gemsets, one is <code>default</code>, one is <code>global</code>. You can use <code>rvm gemset use global</code> to swith to <code>global</code> gemset. When you install gem in <code>global</code> gemset, it will come use to all other gemset.</p>
-</li>
-</ol>
-<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p>follow the guide in <a href="http://railsapps.github.io/installrubyonrails-mac.html" target="_blank" rel="external">InstallRubyonRailsmac</a></p>
-<h2 id="Usages"><a href="#Usages" class="headerlink" title="Usages"></a>Usages</h2><ul>
-<li>remove rvm<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rvm implode</div><div class="line">rm -rf ~/.rvm</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Errors"><a href="#Errors" class="headerlink" title="Errors"></a>Errors</h2><p>. <code>bundle install</code> returns <code>Could not locate Gemfile or .bundle/ directory</code><br>You just need to change directories to your app, THEN run bundle install :) <a href="http://stackoverflow.com/questions/10012181/bundle-install-returns-could-not-locate-gemfile" target="_blank" rel="external">Stackoverflow</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/12/configure-vim-for-rust/" itemprop="url">
-                  A Vim IDE for RUST language
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-12T18:27:04-07:00" content="2016-09-12">
-              2016-09-12
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/World-of-Rust/" itemprop="url" rel="index">
-                    <span itemprop="name">World of Rust</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/12/configure-vim-for-rust/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/12/configure-vim-for-rust/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>In order to make an IDE for rust, I followed <a href="https://github.com/amix/vimrc" target="_blank" rel="external">the Ultimate vimrc</a>, and installed Tagbar, YouCompleteMe to support the RUST language.</p>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ol>
-<li><p>Install <a href="https://github.com/amix/vimrc" target="_blank" rel="external">the Ultimate vimrc</a>, you can follow the  <a href="https://github.com/amix/vimrc/blob/master/README.md" target="_blank" rel="external">readme</a>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/amix/vimrc.git ~/.vim_runtime</div><div class="line">sh ~/.vim_runtime/install_awesome_vimrc.sh</div></pre></td></tr></table></figure>
-</li>
-<li><p>Install Your Plugins to the directory sources_non_forked.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/vim_runtime</div><div class="line">git clone git://github.com/tpope/vim-rails.git  sources_non_forked/vim-rails</div></pre></td></tr></table></figure>
-<ul>
-<li><p>Install tagbar</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/majutsushi/tagbar.git sources_non_forked/tagbar</div></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://github.com/majutsushi/tagbar/wiki#rust" target="_blank" rel="external">Config tagbar for Rust</a>, Put this into ~/.ctags</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">--langdef=Rust</div><div class="line">--langmap=Rust:.rs</div><div class="line">--regex-Rust=/^[ \t]*(#\[[^\]]\][ \t]*)*(pub[ \t]+)?(extern[ \t]+)?(&quot;[^&quot;]+&quot;[ \t]+)?(unsafe[ \t]+)?fn[ \t]+([a-zA-Z0-9_]+)/\6/f,functions,function definitions/</div><div class="line">--regex-Rust=/^[ \t]*(pub[ \t]+)?type[ \t]+([a-zA-Z0-9_]+)/\2/T,types,type definitions/</div><div class="line">--regex-Rust=/^[ \t]*(pub[ \t]+)?enum[ \t]+([a-zA-Z0-9_]+)/\2/g,enum,enumeration names/</div><div class="line">--regex-Rust=/^[ \t]*(pub[ \t]+)?struct[ \t]+([a-zA-Z0-9_]+)/\2/s,structure names/</div><div class="line">--regex-Rust=/^[ \t]*(pub[ \t]+)?mod[ \t]+([a-zA-Z0-9_]+)/\2/m,modules,module names/</div><div class="line">--regex-Rust=/^[ \t]*(pub[ \t]+)?(static|const)[ \t]+(mut[ \t]+)?([a-zA-Z0-9_]+)/\4/c,consts,static constants/</div><div class="line">--regex-Rust=/^[ \t]*(pub[ \t]+)?(unsafe[ \t]+)?trait[ \t]+([a-zA-Z0-9_]+)/\3/t,traits,traits/</div><div class="line">--regex-Rust=/^[ \t]*(pub[ \t]+)?(unsafe[ \t]+)?impl([ \t\n]*&lt;[^&gt;]*&gt;)?[ \t]+(([a-zA-Z0-9_:]+)[ \t]*(&lt;[^&gt;]*&gt;)?[ \t]+(for)[ \t]+)?([a-zA-Z0-9_]+)/\5 \7 \8/i,impls,trait implementations/</div><div class="line">--regex-Rust=/^[ \t]*macro_rules![ \t]+([a-zA-Z0-9_]+)/\1/d,macros,macro definitions/</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<p>and add configuration to the my_configs.vim as step 4.</p>
-<ol>
-<li><p>Install YouCompleteMe for rust follow the <a href="https://github.com/Valloric/YouCompleteMe/blob/master/README.md" target="_blank" rel="external">README</a>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">cd ~/.vim_runtime/sources_non_forked</div><div class="line">git clone https://github.com/Valloric/YouCompleteMe.git sources_non_forked/YouCompleteMe</div><div class="line">cd YouCompleteMe</div><div class="line">git submodule update --init --recursive</div><div class="line">./install.py --racer-completer</div><div class="line">mkdir -p ~/Developer</div><div class="line">mkdir -p ~/Developer</div><div class="line">cd ~/Developer</div><div class="line">git clone --depth 1 --branch master https://github.com/rust-lang/rust rust-master</div></pre></td></tr></table></figure>
-</li>
-<li><p>Add your configurations to the file ~/vim_runtime/my_configs.vim.  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&quot;YouCompleteMe for rust</div><div class="line">let g:ycm_rust_src_path=&quot;/home/huang/Developer/rust-master/src/&quot;</div><div class="line">&quot;enable mouse support</div><div class="line">set mouse=a</div><div class="line">&quot;Arrage the NERDTreePanel to the right</div><div class="line">let NERDTreeWinPos = &quot;right&quot;</div><div class="line">&quot;Arrage the tagbar to the left</div><div class="line">let g:tagbar_left = 1</div><div class="line">let g:tagbar_width = 30</div><div class="line">let g:tagbar_autofocus = 1</div><div class="line">let g:tagbar_sort = 0</div><div class="line">let g:tagbar_compact = 1</div><div class="line">&quot;enable tagbar for rust</div><div class="line">let g:tagbar_type_rust = &#123;</div><div class="line">    \ &apos;ctagstype&apos; : &apos;rust&apos;,</div><div class="line">    \ &apos;kinds&apos; : [</div><div class="line">        \&apos;T:types,type definitions&apos;,</div><div class="line">        \&apos;f:functions,function definitions&apos;,</div><div class="line">        \&apos;g:enum,enumeration names&apos;,</div><div class="line">        \&apos;s:structure names&apos;,</div><div class="line">        \&apos;m:modules,module names&apos;,</div><div class="line">        \&apos;c:consts,static constants&apos;,</div><div class="line">        \&apos;t:traits,traits&apos;,</div><div class="line">        \&apos;i:impls,trait implementations&apos;,</div><div class="line">    \]</div><div class="line">    \&#125;</div><div class="line">&quot;shortcuts</div><div class="line">nmap &lt;F5&gt; :TagbarToggle&lt;cr&gt;</div><div class="line">nmap &lt;F6&gt; :NERDTreeToggle&lt;cr&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><img src="/images/vim.jpg" alt="Vim Appearence"></p>
-<h2 id="Other-Resources"><a href="#Other-Resources" class="headerlink" title="Other Resources"></a>Other Resources</h2><p>[1]: Awesome Rust Collections, <a href="https://github.com/kud1ing/awesome-rust#ides" target="_blank" rel="external">https://github.com/kud1ing/awesome-rust#ides</a></p>
-<p>[2]: Vim Cheet Sheet, <a href="http://vim.rtorr.com/" target="_blank" rel="external">http://vim.rtorr.com/</a></p>
-<p>[3]: VimAwesome, <a href="http://vimawesome.com/" target="_blank" rel="external">http://vimawesome.com/</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -1335,6 +789,14 @@ npm install hexo-renderer-asciidoc --save</pre>
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/02/rust-bindgen-Code-Review/"
+           data-title="rust-bindgen Code Review" data-url="http://qorost.github.io/2016/10/02/rust-bindgen-Code-Review/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -1354,8 +816,17 @@ npm install hexo-renderer-asciidoc --save</pre>
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -1416,6 +887,17 @@ npm install hexo-renderer-asciidoc --save</pre>
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#_abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#_binding"><span class="nav-number">2.</span> <span class="nav-text">binding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#_concepts_of_binding"><span class="nav-number">2.1.</span> <span class="nav-text">Concepts of Binding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#_mapping_interfaces"><span class="nav-number">2.2.</span> <span class="nav-text">Mapping Interfaces</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#_documentation_for_binding"><span class="nav-number">2.3.</span> <span class="nav-text">Documentation for Binding</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#_review_of_code_rust_bindgen_code"><span class="nav-number">3.</span> <span class="nav-text">Review of rust-bindgen</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#_idea_behind_the_project"><span class="nav-number">3.1.</span> <span class="nav-text">Idea behind the project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#_project_structure_of_rust_bindgen"><span class="nav-number">3.2.</span> <span class="nav-text">Project structure of rust-bindgen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#_intermediate_running_result_of_rust_bindgen"><span class="nav-number">3.3.</span> <span class="nav-text">Intermediate Running Result of rust-bindgen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#_translation_rules_for_function"><span class="nav-number">3.4.</span> <span class="nav-text">Translation Rules for Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#_translation_rules_for_types_and_consts"><span class="nav-number">3.5.</span> <span class="nav-text">Translation Rules for Types and Consts</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#_analysis_of_corrode"><span class="nav-number">4.</span> <span class="nav-text">Analysis of Corrode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#_reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -1519,6 +1001,10 @@ npm install hexo-renderer-asciidoc --save</pre>
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
